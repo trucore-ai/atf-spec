@@ -1,0 +1,35 @@
+name: CI — Spec Integrity
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  leakage-check:
+    name: Forbidden Term Scan
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run leakage check
+        run: bash scripts/check_no_leakage.sh
+
+  link-check:
+    name: Markdown Link Check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check local file references
+        run: bash scripts/check_links.sh
+      - name: Check external URLs
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: >-
+            --no-progress
+            --exclude-path scripts/check_no_leakage.sh
+            '**/*.md'
+          fail: true
