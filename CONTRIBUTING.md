@@ -49,6 +49,16 @@ Both scripts must exit with code 0. CI will run the same checks automatically.
 - [ ] Wording is consistent with existing spec tone and terminology.
 - [ ] If modifying receipt examples: values are placeholders or redacted; no policy semantics implied.
 
+## Maintainer note: public-facing content guidelines
+
+When updating or adding public-facing documentation in this repo, preserve the following positioning:
+
+- **ATF positioning** — frame ATF as a transaction policy enforcement layer, not a generic middleware product.
+- **Bot / Solana / agent relevance** — keep examples and language grounded in Solana bot and AI agent use cases.
+- **Receipt / verification language** — use "tamper-evident," "deterministic verification," and "execution receipts" consistently.
+- **Non-custodial framing** — emphasize that ATF never holds keys or submits transactions on the user's behalf.
+- **No internal details** — never reference private repository names, internal service names, or operational parameters.
+
 ## Code of conduct
 
 Be respectful, constructive, and concise. This is an infrastructure specification — keep discussions technical and focused.

@@ -69,6 +69,20 @@ ATF slots into the decision layer between intent construction and on-chain submi
 
 ---
 
+## Where to go next
+
+| Goal | Link |
+| --- | --- |
+| **Try it quickly** — protect your first transaction in minutes | [Quickstart](https://trucore.xyz/quickstart) |
+| **Understand the architecture** — how ATF evaluates and returns decisions | [How it works](https://trucore.xyz/how-it-works) |
+| **Integrate into a bot** — add policy enforcement to an automated strategy | [Bot integration guide](https://trucore.xyz/integrations/bot) |
+| **See a working example** — end-to-end protected Jupiter swap | [Protected swap example](https://trucore.xyz/examples/protected-swap) |
+| **Verify receipts** — independently confirm receipt integrity | [Receipt verification](https://trucore.xyz/verify) |
+| **Explore OpenClaw integration** — AI-agent discovery and plugin surface | [OpenClaw](https://trucore.xyz/openclaw) |
+| **Apply as a design partner** — early access for teams building on ATF | [Apply](https://trucore.xyz/atf/apply) |
+
+---
+
 ## Start here
 
 | Topic | Document |
@@ -79,6 +93,18 @@ ATF slots into the decision layer between intent construction and on-chain submi
 | Verification procedure | [`spec/verification.md`](spec/verification.md) — step-by-step deterministic verification |
 | Threat model | [`spec/threat-model.md`](spec/threat-model.md) — adversary model and security goals |
 | OpenClaw plugin surface | [trucore.xyz/openclaw](https://trucore.xyz/openclaw) — OpenClaw integration for AI agent discovery |
+
+---
+
+## Public repo scope
+
+This repository contains **public specifications and architecture/trust-model material** — the stable contract that integrators and auditors rely on.
+
+- **Live examples and runnable quickstarts** are on [trucore.xyz](https://trucore.xyz/quickstart).
+- **Implementation repositories** are not part of this public surface.
+- **Receipt verification** can be performed independently using only the procedure documented in this spec — no access to any other repository is required.
+
+If you are evaluating ATF, start with the [Quickstart](https://trucore.xyz/quickstart) or the [Where to go next](#where-to-go-next) table above.
 
 ---
 
