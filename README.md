@@ -10,6 +10,9 @@ This repository contains the **public specification and interface contract**: re
 
 > The core enforcement engine remains private. This spec provides the stable contract that integrators rely on and auditors use for independent receipt verification.
 
+**Try ATF in under 60 seconds**
+→ [Quickstart](https://trucore.xyz/quickstart) · [Protected swap example](https://trucore.xyz/examples/protected-swap)
+
 ---
 
 ## Who this is for
