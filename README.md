@@ -1,47 +1,101 @@
-# ATF Spec (Public)
+# Agent Transaction Firewall (ATF) — Specification
 
 ![Spec Status](https://img.shields.io/badge/spec-v1.0_stable-blue)
 
-This repository contains the **public specification and interface contract** for the **Agent Transaction Firewall (ATF)**.
+**Policy-enforced transaction protection for AI trading agents.**
 
-- ✅ Public: receipt format, deterministic verification procedure, threat model, and architecture overview
-- ❌ Not included: proprietary ATF enforcement engine implementation (core remains private)
+ATF is a transaction policy enforcement layer that sits between autonomous trading bots and on-chain execution. It evaluates every transaction intent against configurable policy rules, returns a deterministic machine-readable decision, and generates tamper-evident execution receipts that any party can verify independently — no secrets or API keys required.
 
-ATF is designed for **zero-trust** environments where **agents may be adversarial or compromised**. The core product produces **deterministic receipts** that can be independently verified.
+This repository contains the **public specification and interface contract**: receipt schema, deterministic verification procedure, threat model, and architecture overview. It is the stable reference for anyone building bot integration middleware, receipt verification tooling, or non-custodial execution guardrails on top of ATF.
 
-## What this repo is (and is not)
+> The core enforcement engine remains private. This spec provides the stable contract that integrators rely on and auditors use for independent receipt verification.
 
-### This repo is:
-- A stable, citable specification for:
-  - Receipt schema and field definitions
-  - Deterministic verification procedure and guarantees
-  - Threat model and assumptions
-  - Architecture overview and roadmap interface contract
-- A reference point for builders integrating ATF via CLI and API
+---
 
-### This repo is not:
-- The ATF core enforcement engine source code
-- A "full open-source release" of ATF
+## Who this is for
 
-> **Core enforcement remains private** to reduce supply-chain risk and to preserve proprietary safety logic.
-> This spec repo exists so that *integrators can rely on a stable contract* and *auditors can verify receipts deterministically*.
+- **Solana bot developers** adding transaction policy enforcement to automated strategies
+- **Agent framework builders** integrating execution guardrails into AI trading agents
+- **Autonomous trading systems** that need deterministic allow/deny decisions before execution
+- **DeFi execution infrastructure teams** building non-custodial crypto algo trading infrastructure
+- **Quant developers** requiring tamper-evident audit trails for autonomous trading bots
 
-## Disclosure minimization
+---
 
-This specification intentionally omits internal enforcement logic, policy semantics, decision taxonomies, and operational details. Publishing only the receipt format and verification procedure limits the attack surface available to adversaries, prevents pre-study of enforcement mechanisms, and preserves the integrity of proprietary safety controls. The public contract is sufficient for independent receipt verification and integration; internal details are not required for those purposes.
+## What ATF does
 
-For the full policy on what is included and omitted, see the [redaction policy](spec/redaction-policy.md).
+- **Protects transaction intents before execution** — every request is evaluated against policy before reaching the chain
+- **Evaluates policy rules deterministically** — same inputs always produce the same decision, enabling reproducible audits
+- **Returns machine-readable decisions** — `allow`, `deny`, or `error` with structured metadata for downstream automation
+- **Generates tamper-evident execution receipts** — SHA-256 content hashes over JCS-canonicalized receipt data
+- **Supports receipt verification workflows** — any party can verify receipt integrity independently
+- **Fits into non-custodial bot architectures** — ATF never holds keys or submits transactions on your behalf
 
-## Documents
+---
 
-- Receipt format: [`spec/receipt.md`](spec/receipt.md)
-- Verification procedure: [`spec/verification.md`](spec/verification.md)
-- Threat model: [`spec/threat-model.md`](spec/threat-model.md)
-- Architecture overview: [`spec/architecture.md`](spec/architecture.md)
-- Versioning policy: [`spec/versioning.md`](spec/versioning.md)
-- Receipt examples: [`spec/examples.md`](spec/examples.md)
-- Redaction policy: [`spec/redaction-policy.md`](spec/redaction-policy.md)
-- FAQ: [`FAQ.md`](FAQ.md)
+## How it fits into a bot
+
+```text
+Bot / Agent
+  ↓
+Build transaction intent (e.g. Jupiter swap)
+  ↓
+ATF protect endpoint
+  ↓
+Policy evaluation (deterministic)
+  ↓
+Approved transaction + execution receipt
+  ↓
+Bot submits to Solana
+  ↓
+Receipt verification (independent, any party)
+```
+
+ATF slots into the decision layer between intent construction and on-chain submission. It works with Jupiter swap protection, custom DeFi strategies, or any Solana transaction flow that benefits from pre-execution policy enforcement.
+
+---
+
+## Quick links
+
+| Resource | Link |
+| --- | --- |
+| Quickstart guide | [trucore.xyz/quickstart](https://trucore.xyz/quickstart) |
+| Protected swap example | [trucore.xyz/examples/protected-swap](https://trucore.xyz/examples/protected-swap) |
+| Bot integration guide | [trucore.xyz/integrations/bot](https://trucore.xyz/integrations/bot) |
+| How ATF works | [trucore.xyz/how-it-works](https://trucore.xyz/how-it-works) |
+| Receipt verification | [trucore.xyz/verify](https://trucore.xyz/verify) |
+| OpenClaw integration | [trucore.xyz/openclaw](https://trucore.xyz/openclaw) |
+| Apply for access | [trucore.xyz/atf/apply](https://trucore.xyz/atf/apply) |
+
+---
+
+## Start here
+
+| Topic | Document |
+| --- | --- |
+| Your first protected trade | [`spec/examples.md`](spec/examples.md) — receipt structure and annotated examples |
+| How ATF works (architecture) | [`spec/architecture.md`](spec/architecture.md) — public component overview and flow |
+| Receipt format | [`spec/receipt.md`](spec/receipt.md) — schema, required fields, canonicalization rules |
+| Verification procedure | [`spec/verification.md`](spec/verification.md) — step-by-step deterministic verification |
+| Threat model | [`spec/threat-model.md`](spec/threat-model.md) — adversary model and security goals |
+| OpenClaw plugin surface | [trucore.xyz/openclaw](https://trucore.xyz/openclaw) — OpenClaw integration for AI agent discovery |
+
+---
+
+## Specification documents
+
+| Document | Description |
+| --- | --- |
+| [`spec/receipt.md`](spec/receipt.md) | Receipt format, field definitions, and canonicalization rules |
+| [`spec/verification.md`](spec/verification.md) | Deterministic verification procedure and guarantees |
+| [`spec/threat-model.md`](spec/threat-model.md) | Threat model, adversary assumptions, and security goals |
+| [`spec/architecture.md`](spec/architecture.md) | High-level architecture overview |
+| [`spec/versioning.md`](spec/versioning.md) | Receipt versioning policy and compatibility rules |
+| [`spec/examples.md`](spec/examples.md) | Annotated receipt examples for reference and testing |
+| [`spec/redaction-policy.md`](spec/redaction-policy.md) | Disclosure minimization policy — what is and is not published |
+| [`FAQ.md`](FAQ.md) | Frequently asked questions |
+
+---
 
 ## Verification scope
 
@@ -57,6 +111,16 @@ For the full policy on what is included and omitted, see the [redaction policy](
 - **Policy correctness** — verification confirms integrity, not that internal enforcement logic is bug-free.
 
 See [`spec/verification.md`](spec/verification.md) for the full procedure.
+
+---
+
+## Disclosure minimization
+
+This specification intentionally omits internal enforcement logic, policy semantics, decision taxonomies, and operational details. Publishing only the receipt format and verification procedure limits the attack surface and preserves the integrity of proprietary safety controls. The public contract is sufficient for independent receipt verification and integration.
+
+For the full policy, see [`spec/redaction-policy.md`](spec/redaction-policy.md).
+
+---
 
 ## Compatibility
 

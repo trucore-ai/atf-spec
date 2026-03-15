@@ -4,47 +4,46 @@ This document provides recommended metadata for the `trucore-ai/atf-spec` GitHub
 
 ## GitHub Topics
 
-Recommended topics for the repository:
+Recommended topics for the repository (apply via Settings → Topics):
 
 ```
-agent-security
-transaction-firewall
+agent-transaction-firewall
+ai-agents
+trading-bots
+solana
+defi
+transaction-security
+execution-receipts
 receipt-verification
-deterministic-verification
-zero-trust
-ai-agent-safety
-specification
+openclaw
+jupiter
+bot-infrastructure
+autonomous-agents
 ```
 
 ## About Description
 
 Suggested repository "About" description:
 
-> Public specification for the Agent Transaction Firewall (ATF): receipt format, deterministic verification procedure, threat model, and architecture overview.
+> Policy-enforced transaction protection for AI trading agents — receipt format, deterministic verification, threat model, and architecture spec.
 
 ## Website Field
 
 Suggested repository "Website" field:
 
-```
-https://trucore.xyz/docs
+```text
+https://trucore.xyz
 ```
 
 ## Maturity Indicator
 
 Current status: **Stable — Spec v1.0**
 
-This can be reflected in the repository About section or as a badge in the README.
-
-### Suggested Badge (Optional)
-
-If a status badge is desired in the README, use a static shield:
+### Suggested Badge
 
 ```markdown
 ![Spec Status](https://img.shields.io/badge/spec-v1.0_stable-blue)
 ```
-
-This avoids hype language while communicating maturity.
 
 ## Pinned Issue Suggestions
 
@@ -70,3 +69,36 @@ Suggested body:
 > - On-chain attestation anchoring
 >
 > Discussion welcome. No timeline commitments.
+
+---
+
+## Internal: Discovery keywords (maintainer reference)
+
+<!--
+  These are the high-intent phrases this repo should organically rank for.
+  They should appear naturally in README / spec docs — NOT stuffed.
+  This list is a maintainer reference for future content updates.
+
+  Primary:
+  - AI trading agents
+  - autonomous trading bots
+  - Solana trading bots
+  - transaction policy enforcement
+  - execution receipts
+  - receipt verification
+  - Jupiter swap protection
+  - OpenClaw integration
+  - non-custodial execution guardrails
+  - bot integration middleware
+  - crypto algo trading infrastructure
+  - DeFi bot security
+
+  Secondary:
+  - deterministic verification
+  - tamper-evident audit trail
+  - agent framework integration
+  - Solana bot developer
+  - pre-execution policy enforcement
+  - machine-readable decision
+  - quant developer tooling
+-->
