@@ -24,7 +24,14 @@ Typical flow:
 - Returns the same deterministic receipt model as CLI.
 - Supports caller-provided `request_id` for correlation (passthrough semantics).
 
-### 3) Core enforcement engine (private)
+### 3) Hosted MCP
+
+- Tool-based integration surface for agent runtimes that support Model Context Protocol.
+- Five tools: `probe_transaction`, `simulate_transaction`, `protect_transaction`, `verify_receipt`, `explain_decision`.
+- Same enforcement engine and receipt format as CLI and API.
+- See [docs/mcp-integration.md](../docs/mcp-integration.md) for the public overview.
+
+### 4) Core enforcement engine (private)
 
 - Evaluates requests against policy configuration.
 - Produces deterministic receipts.
@@ -42,22 +49,30 @@ Receipts are the core trust artifact:
 - Explicit `receipt_version` for schema evolution.
 
 See:
-- `spec/receipt.md` — schema and canonicalization rules
-- `spec/verification.md` — verification procedure
+- `spec/receipt.md` -- schema and canonicalization rules
+- `spec/verification.md` -- verification procedure
 
 ## Conceptual flow
 
 ```mermaid
 flowchart LR
-  A[User / Agent] -->|Request| B[ATF Interface]
-  B --> C[Private Enforcement Engine]
-  C -->|Decision| B
+  A[User / Agent] -->|Request| B[ATF Interface: CLI / API / MCP]
+  B --> C[Policy Intelligence Layer]
+  C -->|Decision + Receipt| B
   B -->|Deterministic Receipt| A
   A -->|--verify| D[Independent Verifier]
   D -->|Recompute content_hash| E{Match?}
   E -->|Yes| F[Receipt integrity confirmed]
   E -->|No| G[Reject / investigate]
+  C -->|Outcomes| H[Feedback Loop]
+  H -->|Refined policy| C
 ```
+
+The Policy Intelligence Layer (PIL) connects policy enforcement before
+execution, verified receipts after decisions, and a feedback loop that
+improves capital deployment over time. See
+[docs/policy-intelligence-layer.md](../docs/policy-intelligence-layer.md)
+for the public conceptual overview.
 
 ## Roadmap (public contract perspective)
 
@@ -71,6 +86,6 @@ These additions can be layered while keeping the verification contract stable.
 ## Design principles
 
 - **Fail-closed** for high-risk actions.
-- **Minimal disclosure** — hashes over raw inputs; no policy internals exposed.
-- **Deterministic verification** — any party can verify, no secrets required.
+- **Minimal disclosure** -- hashes over raw inputs; no policy internals exposed.
+- **Deterministic verification** -- any party can verify, no secrets required.
 - **Explicit versioning** via `receipt_version` for backward-compatible evolution.

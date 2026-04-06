@@ -49,3 +49,68 @@ This repository is licensed under the MIT License. You may reference and use the
 ## How do I know this spec matches production behavior?
 
 The spec is intended to match TruCore's public documentation and production behavior. If you find a mismatch between this spec and observed behavior, please open an issue. See the Compatibility section in [README.md](README.md).
+
+---
+
+## What is the Agent Transaction Firewall (ATF)?
+
+ATF is a policy-enforcement layer between an AI agent or trading bot and blockchain transaction execution. Bots submit transaction intents to ATF, which evaluates policies before execution and generates a deterministic execution receipt.
+
+## How does ATF protect AI trading agents?
+
+Agents route transaction intents through ATF before execution. ATF evaluates policy rules and returns an approved transaction along with a verifiable execution receipt.
+
+## Is ATF custodial?
+
+No. ATF does not custody funds or keys. Agents sign and submit transactions independently.
+
+## What are execution receipts?
+
+Execution receipts are deterministic records that allow developers to verify how a transaction was evaluated and approved.
+
+## How can developers verify receipts?
+
+Receipts can be independently checked using the [receipt verification tool](https://trucore.xyz/verify).
+
+## What blockchains does ATF support?
+
+ATF is currently designed around Solana-based execution flows and autonomous trading agents operating on DeFi protocols.
+
+## Does ATF work with trading bots or AI agents?
+
+Yes. ATF is designed for:
+
+- AI trading agents
+- Autonomous trading bots
+- Crypto algo trading systems
+- DeFi automation frameworks
+
+## Where can I try ATF?
+
+- [Quickstart](https://trucore.xyz/quickstart)
+- [Protected swap example](https://trucore.xyz/examples/protected-swap)
+- [Bot integration guide](https://trucore.xyz/integrations/bot)
+
+## Does ATF add latency to my bot?
+
+ATF introduces enforcement overhead, but the direction is **latency-positive enforcement**: ATF's shared state and parallel processing can reduce total workflow latency compared to a standalone bot doing the same work independently. See [`docs/latency-positive-positioning.md`](docs/latency-positive-positioning.md) for the product direction.
+
+## What is the current CLI version?
+
+The current CLI version is **v1.5.1**. The CLI supports deterministic enforcement and receipt verification from the command line.
+
+## What is MCP and how does ATF use it?
+
+MCP (Model Context Protocol) is a standardized way for AI agent runtimes to discover and invoke external tools. ATF exposes a hosted MCP surface with five tools: `probe_transaction`, `simulate_transaction`, `protect_transaction`, `verify_receipt`, and `explain_decision`. MCP is one integration path alongside the CLI and direct API. See [`docs/mcp-integration.md`](docs/mcp-integration.md) for more.
+
+## What is the Policy Intelligence Layer (PIL)?
+
+PIL is the conceptual frame that connects ATF's three core capabilities: policy enforcement before execution, verified receipts after decisions, and a feedback loop that improves capital deployment over time under operator control. It is not a separate service. See [`docs/policy-intelligence-layer.md`](docs/policy-intelligence-layer.md) for the full overview.
+
+## What is the hello-world bot example?
+
+The hello-world bot is a teaching concept that shows how a minimal autonomous bot changes when routed through ATF. It illustrates the before/after difference: an unprotected direct flow versus a policy-gated flow with fail-closed protection and proof. The example is simulated and educational. See [`docs/hello-world-bot.md`](docs/hello-world-bot.md).
+
+## How many ways can I integrate with ATF?
+
+ATF currently offers three integration surfaces: the CLI (v1.5.1), the direct API, and a hosted MCP integration. All three lead to the same enforcement engine and produce the same deterministic receipts.

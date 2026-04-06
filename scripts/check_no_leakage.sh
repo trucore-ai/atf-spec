@@ -54,12 +54,13 @@ declare -A PATTERN_EXCLUDES=(
 
 # ---------------------------------------------------------------------------
 # Global file exclusions
-# README.md and META.md serve as public discovery/positioning surfaces and
-# intentionally reference product-adjacent terms (e.g. Jupiter, swap) that
-# the spec documents must not contain.  Excluding them here keeps the check
-# focused on spec content while allowing legitimate discovery language.
+# README.md, META.md, and FAQ.md serve as public discovery/positioning
+# surfaces and intentionally reference product-adjacent terms (e.g.
+# Jupiter, swap) that the spec documents must not contain.  Excluding
+# them here keeps the check focused on spec content while allowing
+# legitimate discovery language.
 # ---------------------------------------------------------------------------
-GLOBAL_EXCLUDES=( 'README.md' 'META.md' )
+GLOBAL_EXCLUDES=( 'README.md' 'META.md' 'FAQ.md' )
 
 FOUND=0
 
