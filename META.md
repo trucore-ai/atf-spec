@@ -25,7 +25,7 @@ autonomous-agents
 
 Suggested repository "About" description:
 
-> Policy-enforced transaction protection for AI trading agents — receipt format, deterministic verification, threat model, and architecture spec.
+> Policy-enforced transaction protection for AI trading agents -- receipt format, deterministic verification, threat model, and architecture spec.
 
 ## Website Field
 
@@ -37,7 +37,7 @@ https://trucore.xyz
 
 ## Maturity Indicator
 
-Current status: **Stable — Spec v1.0**
+Current status: **Stable -- Spec v1.0**
 
 ### Suggested Badge
 
@@ -76,7 +76,7 @@ Suggested body:
 
 <!--
   These are the high-intent phrases this repo should organically rank for.
-  They should appear naturally in README / spec docs — NOT stuffed.
+  They should appear naturally in README / spec docs -- NOT stuffed.
   This list is a maintainer reference for future content updates.
 
   Primary:
