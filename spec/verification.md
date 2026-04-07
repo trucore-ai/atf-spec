@@ -16,7 +16,7 @@ A verifier should be able to:
 
 Verification can run in two modes:
 
-### Mode A — Receipt-only verification
+### Mode A -- Receipt-only verification
 
 Verifies only the receipt's internal integrity:
 
@@ -25,7 +25,7 @@ Verifies only the receipt's internal integrity:
 
 This does not require the original request body.
 
-### Mode B — Receipt + request verification (stronger)
+### Mode B -- Receipt + request verification (stronger)
 
 Verifies integrity *and* binding to the evaluated inputs:
 
@@ -46,19 +46,19 @@ For v1, JSON is the expected content type.
 
 ## Verification steps (normative)
 
-### Step 1 — Parse
+### Step 1 -- Parse
 
 - Parse receipt as JSON object.
 - Fail if invalid JSON.
 - Fail if `receipt_version` or `content_hash` is missing.
 
-### Step 2 — Validate required fields
+### Step 2 -- Validate required fields
 
 - Ensure all required top-level fields exist (see `spec/receipt.md`).
 - Ensure required nested fields exist.
 - Fail on unknown `receipt_version` major version if strict mode is enabled.
 
-### Step 3 — Recompute `content_hash`
+### Step 3 -- Recompute `content_hash`
 
 - Create `receipt_copy = deep_copy(receipt)`
 - Remove `receipt_copy.content_hash`
@@ -67,7 +67,7 @@ For v1, JSON is the expected content type.
 - Compare to `receipt.content_hash` (case-sensitive, lowercase hex)
 - Fail if mismatch
 
-### Step 4 (optional) — Verify request binding
+### Step 4 (optional) -- Verify request binding
 
 If original request body is available:
 
@@ -82,7 +82,7 @@ If evaluation context is available:
 - Compute `computed_context_hash`.
 - Compare to `receipt.inputs.context_hash`.
 
-### Step 5 — Output
+### Step 5 -- Output
 
 Verifier should emit:
 

@@ -9,7 +9,7 @@ This document provides illustrative receipt examples for reference and testing. 
 > - No policy semantics, decision taxonomies, or enforcement logic are implied by any field values.
 > - The `content_hash` values shown are **placeholders** for structural demonstration and will not pass live verification.
 
-## Example 1 — Minimal Valid Receipt
+## Example 1 -- Minimal Valid Receipt
 
 This receipt contains only the required fields as defined in [spec/receipt.md](receipt.md).
 
@@ -43,11 +43,11 @@ This receipt contains only the required fields as defined in [spec/receipt.md](r
 
 ### Notes
 
-- `decision.status` is `"allow"` — one of the three defined values (`allow`, `deny`, `error`).
+- `decision.status` is `"allow"` -- one of the three defined values (`allow`, `deny`, `error`).
 - `inputs.context_hash` is the SHA-256 of an empty canonical JSON object (`{}`), indicating no additional evaluation context was provided.
 - `content_hash` would normally be computed deterministically per [spec/receipt.md](receipt.md). The value shown is a placeholder.
 
-## Example 2 — Receipt with Optional Fields (Redacted)
+## Example 2 -- Receipt with Optional Fields (Redacted)
 
 This receipt includes optional fields with generic or redacted values. The `extensions` object demonstrates extensibility without revealing engine-specific semantics.
 
@@ -88,7 +88,7 @@ This receipt includes optional fields with generic or redacted values. The `exte
 
 ### Notes
 
-- `decision.summary` is generic ("Denied by policy.") — no policy semantics are disclosed.
+- `decision.summary` is generic ("Denied by policy.") -- no policy semantics are disclosed.
 - `extensions` contains placeholder keys with redacted values. In production, extension keys and values are engine-defined and opaque to this spec.
 - `trace_id` and `warnings` are optional fields. Their schemas are engine-defined and not specified here.
 - All optional fields present in the receipt are included in the `content_hash` computation.

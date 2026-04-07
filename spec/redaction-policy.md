@@ -21,24 +21,24 @@ Publish the **minimum surface area** required for independent receipt verificati
 
 The following categories are **never** published in this repository:
 
-- **Enforcement logic** — internal decision procedures, rule sets, or evaluation algorithms.
-- **Policy semantics** — how policies are authored, composed, or applied.
-- **Decision taxonomies** — enumerated reason values, status sub-codes, or category labels.
-- **Endpoint and protocol details** — paths, headers, request/response shapes, transport specifics.
-- **Adapter or integration internals** — chain-specific adapters, service names, third-party identifiers.
-- **Operational parameters** — thresholds, timing values, capacity figures, or tuning constants.
-- **Infrastructure identifiers** — service mesh names, queue topics, internal hostnames.
+- **Enforcement logic** -- internal decision procedures, rule sets, or evaluation algorithms.
+- **Policy semantics** -- how policies are authored, composed, or applied.
+- **Decision taxonomies** -- enumerated reason values, status sub-codes, or category labels.
+- **Endpoint and protocol details** -- paths, headers, request/response shapes, transport specifics.
+- **Adapter or integration internals** -- chain-specific adapters, service names, third-party identifiers.
+- **Operational parameters** -- thresholds, timing values, capacity figures, or tuning constants.
+- **Infrastructure identifiers** -- service mesh names, queue topics, internal hostnames.
 
 ## Why this matters
 
 Limiting public detail:
 
-1. **Reduces attack surface** — adversaries cannot pre-study enforcement mechanisms.
-2. **Preserves proprietary value** — core safety logic remains a competitive advantage.
-3. **Prevents coupling** — external integrators depend only on the stable receipt contract, insulating them from internal refactors.
-4. **Simplifies maintenance** — fewer published details means fewer things that can become stale or inconsistent.
+1. **Reduces attack surface** -- adversaries cannot pre-study enforcement mechanisms.
+2. **Preserves proprietary value** -- core safety logic remains a competitive advantage.
+3. **Prevents coupling** -- external integrators depend only on the stable receipt contract, insulating them from internal refactors.
+4. **Simplifies maintenance** -- fewer published details means fewer things that can become stale or inconsistent.
 
-## Contributor checklist — before opening or merging a PR
+## Contributor checklist -- before opening or merging a PR
 
 Use this checklist for every change to any file in this repo:
 

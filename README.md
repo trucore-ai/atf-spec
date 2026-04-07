@@ -1,4 +1,4 @@
-# Agent Transaction Firewall (ATF) — Specification
+# Agent Transaction Firewall (ATF) -- Specification
 
 ![spec](https://img.shields.io/badge/spec-public-blue)
 ![ai-agents](https://img.shields.io/badge/ai_agents-supported-purple)
@@ -8,7 +8,7 @@
 
 **Policy-enforced transaction protection for AI trading agents.**
 
-ATF is a transaction policy enforcement layer that sits between autonomous trading bots and on-chain execution. It evaluates every transaction intent against configurable policy rules, returns a deterministic machine-readable decision, and generates tamper-evident execution receipts that any party can verify independently — no secrets or API keys required.
+ATF is a transaction policy enforcement layer that sits between autonomous trading bots and on-chain execution. It evaluates every transaction intent against configurable policy rules, returns a deterministic machine-readable decision, and generates tamper-evident execution receipts that any party can verify independently -- no secrets or API keys required.
 
 This repository contains the **public specification and interface contract**: receipt schema, deterministic verification procedure, threat model, and architecture overview. It is the stable reference for anyone building bot integration middleware, receipt verification tooling, or non-custodial execution guardrails on top of ATF.
 
@@ -45,12 +45,12 @@ This repository contains the **public specification and interface contract**: re
 
 ## What ATF does
 
-- **Protects transaction intents before execution** — every request is evaluated against policy before reaching the chain
-- **Evaluates policy rules deterministically** — same inputs always produce the same decision, enabling reproducible audits
-- **Returns machine-readable decisions** — `allow`, `deny`, or `error` with structured metadata for downstream automation
-- **Generates tamper-evident execution receipts** — SHA-256 content hashes over JCS-canonicalized receipt data
-- **Supports receipt verification workflows** — any party can verify receipt integrity independently
-- **Fits into non-custodial bot architectures** — ATF never holds keys or submits transactions on your behalf
+- **Protects transaction intents before execution** -- every request is evaluated against policy before reaching the chain
+- **Evaluates policy rules deterministically** -- same inputs always produce the same decision, enabling reproducible audits
+- **Returns machine-readable decisions** -- `allow`, `deny`, or `error` with structured metadata for downstream automation
+- **Generates tamper-evident execution receipts** -- SHA-256 content hashes over JCS-canonicalized receipt data
+- **Supports receipt verification workflows** -- any party can verify receipt integrity independently
+- **Fits into non-custodial bot architectures** -- ATF never holds keys or submits transactions on your behalf
 
 ---
 
@@ -99,13 +99,13 @@ For a concrete before/after example, see the [Hello-world bot concept](docs/hell
 
 | Goal | Link |
 | --- | --- |
-| **Try it quickly** — protect your first transaction in minutes | [Quickstart](https://trucore.xyz/quickstart) |
-| **Understand the architecture** — how ATF evaluates and returns decisions | [How it works](https://trucore.xyz/how-it-works) |
-| **Integrate into a bot** — add policy enforcement to an automated strategy | [Bot integration guide](https://trucore.xyz/integrations/bot) |
-| **See a working example** — end-to-end protected Jupiter swap | [Protected swap example](https://trucore.xyz/examples/protected-swap) |
-| **Verify receipts** — independently confirm receipt integrity | [Receipt verification](https://trucore.xyz/verify) |
-| **Explore OpenClaw integration** — AI-agent discovery and plugin surface | [OpenClaw](https://trucore.xyz/openclaw) |
-| **Apply as a design partner** — early access for teams building on ATF | [Apply](https://trucore.xyz/atf/apply) |
+| **Try it quickly** -- protect your first transaction in minutes | [Quickstart](https://trucore.xyz/quickstart) |
+| **Understand the architecture** -- how ATF evaluates and returns decisions | [How it works](https://trucore.xyz/how-it-works) |
+| **Integrate into a bot** -- add policy enforcement to an automated strategy | [Bot integration guide](https://trucore.xyz/integrations/bot) |
+| **See a working example** -- end-to-end protected Jupiter swap | [Protected swap example](https://trucore.xyz/examples/protected-swap) |
+| **Verify receipts** -- independently confirm receipt integrity | [Receipt verification](https://trucore.xyz/verify) |
+| **Explore OpenClaw integration** -- AI-agent discovery and plugin surface | [OpenClaw](https://trucore.xyz/openclaw) |
+| **Apply as a design partner** -- early access for teams building on ATF | [Apply](https://trucore.xyz/atf/apply) |
 
 ---
 
@@ -127,11 +127,11 @@ For a concrete before/after example, see the [Hello-world bot concept](docs/hell
 
 ## Public repo scope
 
-This repository contains **public specifications and architecture/trust-model material** — the stable contract that integrators and auditors rely on.
+This repository contains **public specifications and architecture/trust-model material** -- the stable contract that integrators and auditors rely on.
 
 - **Live examples and runnable quickstarts** are on [trucore.xyz](https://trucore.xyz/quickstart).
 - **Implementation repositories** are not part of this public surface.
-- **Receipt verification** can be performed independently using only the procedure documented in this spec — no access to any other repository is required.
+- **Receipt verification** can be performed independently using only the procedure documented in this spec -- no access to any other repository is required.
 
 If you are evaluating ATF, start with the [Quickstart](https://trucore.xyz/quickstart) or the [Where to go next](#where-to-go-next) table above.
 
@@ -164,9 +164,9 @@ If you are evaluating ATF, start with the [Quickstart](https://trucore.xyz/quick
 
 ### What verification does not prove
 
-- **Issuer identity** — receipts are not signed in the current spec version (signing is a planned extension).
-- **Execution status** — a verified receipt does not confirm that any on-chain or off-chain action was executed.
-- **Policy correctness** — verification confirms integrity, not that internal enforcement logic is bug-free.
+- **Issuer identity** -- receipts are not signed in the current spec version (signing is a planned extension).
+- **Execution status** -- a verified receipt does not confirm that any on-chain or off-chain action was executed.
+- **Policy correctness** -- verification confirms integrity, not that internal enforcement logic is bug-free.
 
 See [`spec/verification.md`](spec/verification.md) for the full procedure.
 

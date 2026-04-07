@@ -11,13 +11,13 @@ This repository contains **documentation and specification only**. Contributions
 - Receipt-example improvements
 - Threat-model refinements
 
-Contributions that propose or include **implementation details** — endpoints, headers, enforcement logic, policy semantics, decision taxonomies, or operational parameters — will not be accepted. See [spec/redaction-policy.md](spec/redaction-policy.md) for the full disclosure-minimization policy.
+Contributions that propose or include **implementation details** -- endpoints, headers, enforcement logic, policy semantics, decision taxonomies, or operational parameters -- will not be accepted. See [spec/redaction-policy.md](spec/redaction-policy.md) for the full disclosure-minimization policy.
 
 ## How to propose changes
 
-1. **Spec clarifications** — open an issue using the **Spec Clarification** template.
-2. **Documentation errors** — open an issue using the **Bug Report** template, or submit a pull request directly.
-3. **Security issues** — follow the private disclosure process in [SECURITY.md](SECURITY.md). Do **not** open public issues for security vulnerabilities.
+1. **Spec clarifications** -- open an issue using the **Spec Clarification** template.
+2. **Documentation errors** -- open an issue using the **Bug Report** template, or submit a pull request directly.
+3. **Security issues** -- follow the private disclosure process in [SECURITY.md](SECURITY.md). Do **not** open public issues for security vulnerabilities.
 
 ## Style guide
 
@@ -53,12 +53,12 @@ Both scripts must exit with code 0. CI will run the same checks automatically.
 
 When updating or adding public-facing documentation in this repo, preserve the following positioning:
 
-- **ATF positioning** — frame ATF as a transaction policy enforcement layer, not a generic middleware product.
-- **Bot / Solana / agent relevance** — keep examples and language grounded in Solana bot and AI agent use cases.
-- **Receipt / verification language** — use "tamper-evident," "deterministic verification," and "execution receipts" consistently.
-- **Non-custodial framing** — emphasize that ATF never holds keys or submits transactions on the user's behalf.
-- **No internal details** — never reference private repository names, internal service names, or operational parameters.
+- **ATF positioning** -- frame ATF as a transaction policy enforcement layer, not a generic middleware product.
+- **Bot / Solana / agent relevance** -- keep examples and language grounded in Solana bot and AI agent use cases.
+- **Receipt / verification language** -- use "tamper-evident," "deterministic verification," and "execution receipts" consistently.
+- **Non-custodial framing** -- emphasize that ATF never holds keys or submits transactions on the user's behalf.
+- **No internal details** -- never reference private repository names, internal service names, or operational parameters.
 
 ## Code of conduct
 
-Be respectful, constructive, and concise. This is an infrastructure specification — keep discussions technical and focused.
+Be respectful, constructive, and concise. This is an infrastructure specification -- keep discussions technical and focused.
