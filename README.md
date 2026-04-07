@@ -151,7 +151,6 @@ If you are evaluating ATF, start with the [Quickstart](https://trucore.xyz/quick
 | [`docs/hello-world-bot.md`](docs/hello-world-bot.md) | Before/after bot integration teaching concept |
 | [`docs/mcp-integration.md`](docs/mcp-integration.md) | Hosted MCP integration surface for agent runtimes |
 | [`docs/policy-intelligence-layer.md`](docs/policy-intelligence-layer.md) | Policy Intelligence Layer: enforcement, proof, feedback |
-| [`docs/latency-positive-positioning.md`](docs/latency-positive-positioning.md) | Latency-positive positioning: execution modes, evaluation terms, benchmark philosophy |
 | [`FAQ.md`](FAQ.md) | Frequently asked questions |
 
 ---
