@@ -1,6 +1,10 @@
 # Agent Transaction Firewall (ATF) — Specification
 
-![Spec Status](https://img.shields.io/badge/spec-v1.0_stable-blue)
+![spec](https://img.shields.io/badge/spec-public-blue)
+![ai-agents](https://img.shields.io/badge/ai_agents-supported-purple)
+![solana](https://img.shields.io/badge/solana-compatible-green)
+![execution-receipts](https://img.shields.io/badge/execution_receipts-verifiable-orange)
+![developer-tooling](https://img.shields.io/badge/devtool-agent_infrastructure-lightgrey)
 
 **Policy-enforced transaction protection for AI trading agents.**
 
@@ -12,6 +16,20 @@ This repository contains the **public specification and interface contract**: re
 
 **Try ATF in under 60 seconds**
 → [Quickstart](https://trucore.xyz/quickstart) · [Protected swap example](https://trucore.xyz/examples/protected-swap)
+
+---
+
+## Available today
+
+| Surface | Details |
+| --- | --- |
+| **CLI** | v1.5.1 -- deterministic enforcement and receipt verification from the command line |
+| **Hosted MCP integration** | Five-tool surface for agent runtimes: `probe_transaction`, `simulate_transaction`, `protect_transaction`, `verify_receipt`, `explain_decision` |
+| **Hello-world bot tutorial** | Before/after teaching path showing how a minimal bot changes when routed through ATF |
+| **Policy Intelligence Layer (PIL)** | Policy before execution, verified receipt after decision, feedback into the intelligence loop |
+| **Receipt verification** | Independent, deterministic, no secrets required |
+
+→ [MCP integration overview](docs/mcp-integration.md) · [Hello-world bot concept](docs/hello-world-bot.md) · [Policy Intelligence Layer](docs/policy-intelligence-layer.md)
 
 ---
 
@@ -43,9 +61,12 @@ Bot / Agent
   ↓
 Build transaction intent (e.g. Jupiter swap)
   ↓
-ATF protect endpoint
+ATF protect endpoint (via CLI, API, or MCP)
   ↓
-Policy evaluation (deterministic)
+Policy Intelligence Layer (PIL)
+  - policy evaluation (deterministic)
+  - decision + verified receipt
+  - outcomes feed back into the intelligence loop
   ↓
 Approved transaction + execution receipt
   ↓
@@ -54,7 +75,9 @@ Bot submits to Solana
 Receipt verification (independent, any party)
 ```
 
-ATF slots into the decision layer between intent construction and on-chain submission. It works with Jupiter swap protection, custom DeFi strategies, or any Solana transaction flow that benefits from pre-execution policy enforcement.
+ATF slots into the decision layer between intent construction and on-chain submission. It works with Jupiter swap protection, custom DeFi strategies, or any Solana transaction flow that benefits from pre-execution policy enforcement. Agents can integrate via CLI, API, or the hosted MCP surface.
+
+For a concrete before/after example, see the [Hello-world bot concept](docs/hello-world-bot.md).
 
 ---
 
@@ -90,12 +113,15 @@ ATF slots into the decision layer between intent construction and on-chain submi
 
 | Topic | Document |
 | --- | --- |
-| Your first protected trade | [`spec/examples.md`](spec/examples.md) — receipt structure and annotated examples |
-| How ATF works (architecture) | [`spec/architecture.md`](spec/architecture.md) — public component overview and flow |
-| Receipt format | [`spec/receipt.md`](spec/receipt.md) — schema, required fields, canonicalization rules |
-| Verification procedure | [`spec/verification.md`](spec/verification.md) — step-by-step deterministic verification |
-| Threat model | [`spec/threat-model.md`](spec/threat-model.md) — adversary model and security goals |
-| OpenClaw plugin surface | [trucore.xyz/openclaw](https://trucore.xyz/openclaw) — OpenClaw integration for AI agent discovery |
+| Your first protected trade | [`spec/examples.md`](spec/examples.md) -- receipt structure and annotated examples |
+| Hello-world bot concept | [`docs/hello-world-bot.md`](docs/hello-world-bot.md) -- before/after integration story |
+| How ATF works (architecture) | [`spec/architecture.md`](spec/architecture.md) -- public component overview and flow |
+| MCP integration | [`docs/mcp-integration.md`](docs/mcp-integration.md) -- hosted MCP surface for agent runtimes |
+| Policy Intelligence Layer | [`docs/policy-intelligence-layer.md`](docs/policy-intelligence-layer.md) -- policy, proof, and feedback loop |
+| Receipt format | [`spec/receipt.md`](spec/receipt.md) -- schema, required fields, canonicalization rules |
+| Verification procedure | [`spec/verification.md`](spec/verification.md) -- step-by-step deterministic verification |
+| Threat model | [`spec/threat-model.md`](spec/threat-model.md) -- adversary model and security goals |
+| OpenClaw plugin surface | [trucore.xyz/openclaw](https://trucore.xyz/openclaw) -- OpenClaw integration for AI agent discovery |
 
 ---
 
@@ -121,7 +147,10 @@ If you are evaluating ATF, start with the [Quickstart](https://trucore.xyz/quick
 | [`spec/architecture.md`](spec/architecture.md) | High-level architecture overview |
 | [`spec/versioning.md`](spec/versioning.md) | Receipt versioning policy and compatibility rules |
 | [`spec/examples.md`](spec/examples.md) | Annotated receipt examples for reference and testing |
-| [`spec/redaction-policy.md`](spec/redaction-policy.md) | Disclosure minimization policy — what is and is not published |
+| [`spec/redaction-policy.md`](spec/redaction-policy.md) | Disclosure minimization policy -- what is and is not published |
+| [`docs/hello-world-bot.md`](docs/hello-world-bot.md) | Before/after bot integration teaching concept |
+| [`docs/mcp-integration.md`](docs/mcp-integration.md) | Hosted MCP integration surface for agent runtimes |
+| [`docs/policy-intelligence-layer.md`](docs/policy-intelligence-layer.md) | Policy Intelligence Layer: enforcement, proof, feedback |
 | [`FAQ.md`](FAQ.md) | Frequently asked questions |
 
 ---
@@ -159,6 +188,10 @@ This spec is intended to match TruCore's public documentation and production beh
 - Deterministic `content_hash` computed from canonicalized receipt content
 
 If you find a mismatch between this spec and observed behavior, please open an issue.
+
+## Developer FAQ
+
+See [`FAQ.md`](FAQ.md) for common developer questions about ATF, execution receipts, verification, and supported platforms.
 
 ## Contributing
 

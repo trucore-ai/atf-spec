@@ -49,3 +49,25 @@ This repository is licensed under the MIT License. You may reference and use the
 ## How do I know this spec matches production behavior?
 
 The spec is intended to match TruCore's public documentation and production behavior. If you find a mismatch between this spec and observed behavior, please open an issue. See the Compatibility section in [README.md](README.md).
+
+---
+
+## What is the current CLI version?
+
+The current CLI version is **v1.5.1**. The CLI supports deterministic enforcement and receipt verification from the command line.
+
+## What is MCP and how does ATF use it?
+
+MCP (Model Context Protocol) is a standardized way for AI agent runtimes to discover and invoke external tools. ATF exposes a hosted MCP surface with five tools: `probe_transaction`, `simulate_transaction`, `protect_transaction`, `verify_receipt`, and `explain_decision`. MCP is one integration path alongside the CLI and direct API. See [`docs/mcp-integration.md`](docs/mcp-integration.md) for more.
+
+## What is the Policy Intelligence Layer (PIL)?
+
+PIL is the conceptual frame that connects ATF's three core capabilities: policy enforcement before execution, verified receipts after decisions, and a feedback loop that improves capital deployment over time under operator control. It is not a separate service. See [`docs/policy-intelligence-layer.md`](docs/policy-intelligence-layer.md) for the full overview.
+
+## What is the hello-world bot example?
+
+The hello-world bot is a teaching concept that shows how a minimal autonomous bot changes when routed through ATF. It illustrates the before/after difference: an unprotected direct flow versus a policy-gated flow with fail-closed protection and proof. The example is simulated and educational. See [`docs/hello-world-bot.md`](docs/hello-world-bot.md).
+
+## How many ways can I integrate with ATF?
+
+ATF currently offers three integration surfaces: the CLI (v1.5.1), the direct API, and a hosted MCP integration. All three lead to the same enforcement engine and produce the same deterministic receipts.
