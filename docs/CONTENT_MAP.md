@@ -65,7 +65,10 @@ Human-facing and agent-facing documentation lives at
 | Integrate ATF into my bot | [trucore.xyz/docs/getting-started](https://trucore.xyz/docs/getting-started) |
 | Understand the receipt format | [spec/receipt.md](../spec/receipt.md) |
 | See CLI commands | [trucore.xyz/docs/cli/commands](https://trucore.xyz/docs/cli/commands) |
-| Use MCP tools | [docs/mcp-integration.md](mcp-integration.md) |
+| Use MCP tools | [docs/mcp-integration.md](mcp-integration.md) or [trucore.xyz/docs/mcp](https://trucore.xyz/docs/mcp) |
+| Learn receipt verification in practice | [trucore.xyz/docs/verify](https://trucore.xyz/docs/verify) |
+| Walk through the golden-path flow | [trucore.xyz/docs/first-protected-trade](https://trucore.xyz/docs/first-protected-trade) |
+| See the hello-world bot tutorial | [docs/hello-world-bot.md](hello-world-bot.md) or [trucore.xyz/docs/hello-world-bot](https://trucore.xyz/docs/hello-world-bot) |
 | Report a security issue | [SECURITY.md](../SECURITY.md) |
 | Contribute to the spec | [CONTRIBUTING.md](../CONTRIBUTING.md) |
 | Get operational support | [trucore.xyz/docs](https://trucore.xyz/docs) (authenticated) |
@@ -87,3 +90,16 @@ The specification in this repo is the normative source for receipt format,
 verification procedure, and threat model. Product documentation on
 trucore.xyz provides tutorials and operational guidance built on top of
 these specifications.
+
+### Cross-links
+
+Key tutorial pages on trucore.xyz now link back to the normative spec
+documents in this repo. The following pages include "See the specification"
+references:
+
+- [trucore.xyz/docs/receipts-and-trust](https://trucore.xyz/docs/receipts-and-trust) → spec/receipt.md, spec/verification.md
+- [trucore.xyz/docs/verify](https://trucore.xyz/docs/verify) → spec/verification.md
+- [trucore.xyz/docs/mcp](https://trucore.xyz/docs/mcp) → docs/mcp-integration.md
+- [trucore.xyz/docs/hello-world-bot](https://trucore.xyz/docs/hello-world-bot) → docs/hello-world-bot.md
+- [trucore.xyz/docs/first-protected-trade](https://trucore.xyz/docs/first-protected-trade) → spec/receipt.md, spec/verification.md
+- [trucore.xyz/docs/receipt-specification-v1](https://trucore.xyz/docs/receipt-specification-v1) → spec/receipt.md, spec/verification.md
