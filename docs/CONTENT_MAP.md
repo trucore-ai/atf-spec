@@ -69,6 +69,7 @@ Human-facing and agent-facing documentation lives at
 | Learn receipt verification in practice | [trucore.xyz/docs/verify](https://trucore.xyz/docs/verify) |
 | Walk through the golden-path flow | [trucore.xyz/docs/first-protected-trade](https://trucore.xyz/docs/first-protected-trade) |
 | See the hello-world bot tutorial | [docs/hello-world-bot.md](hello-world-bot.md) or [trucore.xyz/docs/hello-world-bot](https://trucore.xyz/docs/hello-world-bot) |
+| Understand spec vs product terminology | [trucore.xyz/docs/terminology-and-endpoints](https://trucore.xyz/docs/terminology-and-endpoints) |
 | Report a security issue | [SECURITY.md](../SECURITY.md) |
 | Contribute to the spec | [CONTRIBUTING.md](../CONTRIBUTING.md) |
 | Get operational support | [trucore.xyz/docs](https://trucore.xyz/docs) (authenticated) |
@@ -103,3 +104,4 @@ references:
 - [trucore.xyz/docs/hello-world-bot](https://trucore.xyz/docs/hello-world-bot) → docs/hello-world-bot.md
 - [trucore.xyz/docs/first-protected-trade](https://trucore.xyz/docs/first-protected-trade) → spec/receipt.md, spec/verification.md
 - [trucore.xyz/docs/receipt-specification-v1](https://trucore.xyz/docs/receipt-specification-v1) → spec/receipt.md, spec/verification.md
+- [trucore.xyz/docs/terminology-and-endpoints](https://trucore.xyz/docs/terminology-and-endpoints) → spec/receipt.md (decision.status, content_hash terminology mapping)
