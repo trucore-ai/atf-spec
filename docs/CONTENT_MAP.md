@@ -1,3 +1,13 @@
+---
+title: ATF Documentation Content Map
+summary: Index of all ATF documentation across spec, guides, and product surfaces — with canonical locations for each content type.
+layer: public
+audience: both
+status: map
+product_area: [documentation, discovery]
+related_pages: [spec/receipt.md, spec/verification.md, spec/architecture.md, docs/mcp-integration.md, docs/hello-world-bot.md]
+---
+
 # ATF Documentation Content Map
 
 > Where to find every type of ATF documentation.
