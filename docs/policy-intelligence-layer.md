@@ -1,3 +1,12 @@
+---
+title: Policy Intelligence Layer (PIL)
+summary: Conceptual overview — policy enforcement, verified receipts, and the feedback loop that improves capital deployment.
+layer: public
+audience: both
+status: canonical
+product_area: [policy, receipts]
+---
+
 # Policy Intelligence Layer (PIL)
 
 > **Scope:** Public conceptual overview. This page explains PIL as the

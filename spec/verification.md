@@ -1,4 +1,14 @@
-﻿# ATF Deterministic Verification Procedure
+﻿---
+title: ATF Deterministic Verification Procedure
+summary: Normative verification procedure — Mode A (local recomputation) and Mode B (API-assisted), JCS canonicalization, SHA-256 hashing.
+layer: public
+audience: both
+status: spec
+product_area: [verification, receipts]
+site_ref: /docs/verify
+---
+
+# ATF Deterministic Verification Procedure
 
 This document specifies how to verify an ATF receipt deterministically, including how `--verify` should behave conceptually.
 

@@ -1,3 +1,13 @@
+---
+title: "Hello-World Bot: Before and After ATF"
+summary: Minimal bot tutorial — unprotected vs ATF-protected, showing exactly what changes when you add a policy gate.
+layer: public
+audience: both
+status: tutorial
+product_area: [onboarding, policy]
+site_ref: /docs/hello-world-bot
+---
+
 # Hello-World Bot: Before and After ATF
 
 > **Scope:** Public teaching concept. This page explains how a minimal

@@ -1,4 +1,14 @@
-﻿# ATF Receipt Specification
+﻿---
+title: ATF Receipt Specification
+summary: Normative receipt schema — fields, types, deterministic content_hash computation, and verification rules.
+layer: public
+audience: both
+status: spec
+product_area: [receipts, verification]
+site_ref: /docs/receipt-specification-v1
+---
+
+# ATF Receipt Specification
 
 This document defines the **ATF receipt** format and the deterministic rules used to compute and verify its `content_hash`.
 

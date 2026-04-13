@@ -1,3 +1,12 @@
+---
+title: ATF Receipt Spec Versioning Policy
+summary: Receipt version semantics — major.minor scheme, backwards compatibility guarantees, and migration rules.
+layer: public
+audience: both
+status: spec
+product_area: [receipts]
+---
+
 # ATF Receipt Spec Versioning Policy
 
 This document defines how the ATF receipt specification is versioned and what compatibility guarantees apply across versions.

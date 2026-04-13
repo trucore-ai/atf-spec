@@ -1,3 +1,13 @@
+---
+title: MCP Integration
+summary: Hosted MCP surface overview — five tools (probe, simulate, protect, verify, explain), invocation patterns, and operator control.
+layer: public
+audience: agent
+status: canonical
+product_area: [mcp, discovery]
+site_ref: /docs/mcp
+---
+
 # MCP Integration
 
 > **Scope:** Public overview of ATF's hosted MCP integration surface.

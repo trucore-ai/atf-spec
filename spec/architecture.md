@@ -1,4 +1,14 @@
-﻿# ATF Architecture Overview (Public)
+﻿---
+title: ATF Architecture Overview
+summary: High-level public architecture — CLI, API, MCP surfaces, core engine contract, and deterministic receipt flow.
+layer: public
+audience: both
+status: spec
+product_area: [architecture]
+site_ref: /docs/atf-architecture
+---
+
+# ATF Architecture Overview (Public)
 
 This document describes the high-level architecture of ATF, focusing on the public contract: how clients interact with ATF and the deterministic receipts they receive.
 

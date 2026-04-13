@@ -1,4 +1,13 @@
-﻿# ATF Threat Model (Summary)
+﻿---
+title: ATF Threat Model
+summary: Zero-trust threat model for AI agent capital movement — assumptions, attack surfaces, and mitigation design.
+layer: public
+audience: both
+status: spec
+product_area: [architecture]
+---
+
+# ATF Threat Model (Summary)
 
 ATF is designed for environments where **AI agents can move capital** and **must not be trusted**, even if they appear "aligned."
 The default posture is **zero trust**.
