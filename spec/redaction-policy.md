@@ -1,3 +1,13 @@
+---
+title: Redaction Policy
+summary: Disclosure-minimization principles for ATF public specification — what is published, what is omitted, and why.
+layer: public
+audience: human
+status: spec
+product_area: [governance, security]
+site_ref: /docs/atf-architecture
+---
+
 # Redaction Policy
 
 This document describes the disclosure-minimization principles applied to the ATF public specification. It is intended for contributors, reviewers, and anyone evaluating the scope of material published in this repository.

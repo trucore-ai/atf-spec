@@ -1,3 +1,14 @@
+---
+title: ATF Receipt Examples
+summary: Illustrative receipt examples for reference and testing — minimal, enriched, and denied decision variants.
+layer: public
+audience: both
+status: spec
+product_area: [receipts, verification]
+related_pages: [spec/receipt.md, spec/verification.md]
+site_ref: /docs/receipt-specification-v1
+---
+
 # ATF Receipt Examples
 
 This document provides illustrative receipt examples for reference and testing. These examples demonstrate the receipt structure defined in [spec/receipt.md](receipt.md) and the verification procedure described in [spec/verification.md](verification.md).
